@@ -1,0 +1,40 @@
+*{
+    background: 0;
+    margin:0;
+    padding:0;
+}
+#clickable{
+    cursor: pointer;
+    margin-left:20%;
+}
+.mat-api{
+    margin:-0.4em -0.4em;
+    width:101%;   
+    padding:3% 3%;
+}
+.form-control{
+    background-color: white;
+    width:270%;
+    margin-left:60%;
+    height:40px;
+    font-size: large;
+}
+.form-control:focus{
+    border-color: orange;
+    border-width: 3px;
+}
+.fa-search{
+    border-color: white;
+    color:black;
+}
+.search{
+    background-color: orange;
+    width:30%;
+    height:42px;
+    margin-top:-0.9px;
+    border-radius: 5px;
+    box-shadow: none;
+}
+.fa-shopping-cart{
+    margin-left:1600%;
+}

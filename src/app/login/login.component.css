@@ -1,0 +1,35 @@
+.toolbar
+{
+    justify-content: center;   
+}
+.container
+{
+    padding:5% 28%;
+    box-shadow: 5px 5px 5px 5px;
+    width:100%;
+}
+.form-content
+{
+    text-align: center;
+    padding: 2% 2%;
+}
+mat-form-field
+{
+    width:100%;
+}
+button
+{
+    width:100%;
+}
+.not-found
+{
+    color:red;
+    text-align: center;
+    font-size: 1.2em;
+}
+.validated
+{
+    color:green;
+    text-align: center;
+    font-size: 1.2em;
+}

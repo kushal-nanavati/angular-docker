@@ -1,0 +1,10 @@
+.cards
+{
+    margin-top:3%;
+    width:100%;
+    display:grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: auto;
+    margin-right:10%;
+    margin-bottom:5%;
+}

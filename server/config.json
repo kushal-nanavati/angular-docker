@@ -1,0 +1,10 @@
+{
+    "dbConfig":{
+        "user":"sa",
+        "password":"Passwd@12",
+        "server":"KUSHAL",
+        "database":"happy",
+        "port":1433
+    },
+    "serverPort":2500
+}

@@ -1,0 +1,30 @@
+<mat-toolbar color="primary" class="toolbar">Login Form</mat-toolbar>
+<div [ngClass]="isError?'not-found':'validated'">{{text}}</div>
+<div class="form-content">
+<form [formGroup]="loginForm" (submit)="submit(users)">
+  <div class="container">
+    <mat-form-field appearance="legacy">
+      <mat-label>Username</mat-label>
+      <input matInput type="text" placeholder="Username" formControlName="Username" [(ngModel)]="users.Username" id="username">
+      <div *ngIf="loginForm.get('Username').invalid && (loginForm.get('Username').dirty
+       || loginForm.get('Username').touched)" class="alert alert-danger">
+      <div *ngIf="loginForm.get('Username').errors.required">*Username is required</div>
+      <div *ngIf="loginForm.get('Username').errors.minlength">*Username must be atleast 5 characters long.</div>
+      </div>
+    </mat-form-field>
+    <mat-form-field appearance="legacy">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" placeholder="Password" formControlName="Password" [(ngModel)]="users.Password" id="password">
+        <div *ngIf="loginForm.get('Password').invalid && (loginForm.get('Password').dirty || loginForm.get('Password').touched)" 
+        class="alert alert-danger">
+          <div *ngIf="loginForm.get('Password').errors.required">*Password is required</div>
+          <div *ngIf="loginForm.get('Password').errors.minlength">*Password must be atleast 5 characters long.</div>
+        </div>
+      </mat-form-field>
+      <button mat-button color="primary" [disabled]="loginForm.invalid">Login</button>
+      <p>Not a user? Go to Register!</p>
+  </div>  
+</form>
+</div>
+
+

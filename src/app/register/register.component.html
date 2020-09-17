@@ -1,0 +1,71 @@
+<mat-toolbar color="primary" class="toolbar">Registration Form</mat-toolbar>
+<div [ngClass]="isError?'not-found':'validated'">{{text}}</div>
+<div class="form-content">
+<form [formGroup]="registerForm" (submit)="submit(reg_users)">
+  <div class="container">
+      <mat-form-field appearance="legacy">
+          <mat-label>EmailID</mat-label>
+          <input matInput type="email" placeholder="Email" formControlName="EmailID" [(ngModel)]="reg_users.EmailID" id="email">
+          <div *ngIf="registerForm.get('EmailID').invalid && (registerForm.get('EmailID').dirty
+           || registerForm.get('EmailID').touched)" class="alert alert-danger">
+            <div *ngIf="registerForm.get('EmailID').errors.required">*EmailID is required</div>
+            <div *ngIf="registerForm.get('EmailID').errors.minlength">*EmailID must be atleast 12 characters long.</div>
+            <div *ngIf="registerForm.get('EmailID').errors.pattern">*EmailID must only contain letters, @ and digits.</div>
+            <div *ngIf="registerForm.get('EmailID').errors.pattern">*TLD can't start with a dot(.).</div>
+            <div *ngIf="registerForm.get('EmailID').errors.pattern">*No character before @.</div>
+            <div *ngIf="registerForm.get('EmailID').errors.pattern">*Invalid TLD.</div>
+          </div>
+      </mat-form-field>
+      <mat-form-field appearance="legacy">
+        <mat-label>Username</mat-label>
+        <input matInput type="text" placeholder="Username" formControlName="Username" [(ngModel)]="reg_users.Username" id="username">
+        <div *ngIf="registerForm.get('Username').invalid && (registerForm.get('Username').dirty
+          || registerForm.get('Username').touched)" class="alert alert-danger">
+          <div *ngIf="registerForm.get('Username').errors.required">*Username is required</div>
+          <div *ngIf="registerForm.get('Username').errors.minlength">*Username must be atleast 6 characters long.</div>
+          <div *ngIf="registerForm.get('Username').errors.maxlength">*Username must be maximum of 12 characters long.</div>
+          <div *ngIf="registerForm.get('Username').errors.pattern">*Username must only contain letters and digits.</div>
+        </div>
+      </mat-form-field>
+      <mat-form-field appearance="legacy">
+        <mat-label>Phone Number</mat-label>
+        <input matInput type="text" placeholder="Phone number" formControlName="Phone_Number" 
+          [(ngModel)]="reg_users.Phone_Number" id="phone_num">
+        <div *ngIf="registerForm.get('Phone_Number').invalid && (registerForm.get('Phone_Number').dirty
+          || registerForm.get('Phone_Number').touched)" class="alert alert-danger">
+            <div *ngIf="registerForm.get('Phone_Number').errors.required">*Phone number is required</div>
+            <div *ngIf="registerForm.get('Phone_Number').errors.minlength">*Phone number must be 10 characters long.</div>
+            <div *ngIf="registerForm.get('Phone_Number').errors.pattern">*Phone number must only contain digits.</div>
+        </div>
+        </mat-form-field>
+        <mat-form-field appearance="legacy">
+          <mat-label>Address</mat-label>
+          <input matInput type="text" placeholder="Address" formControlName="Address" [(ngModel)]="reg_users.Address" id="addr">
+          <div *ngIf="registerForm.get('Address').invalid && (registerForm.get('Address').dirty
+            || registerForm.get('Address').touched)" class="alert alert-danger">
+              <div *ngIf="registerForm.get('Address').errors.required">*Address is required</div>
+              <div *ngIf="registerForm.get('Address').errors.minlength">*Address must be atleast 20 characters long.</div>
+              <div *ngIf="registerForm.get('Address').errors.maxlength">*Address must be maximum of 60 characters long.</div>
+              <div *ngIf="registerForm.get('Address').errors.pattern">*Address must only contain letters, digits and 
+                special characters like :,-/.</div>
+          </div>        
+        </mat-form-field>
+        <mat-form-field appearance="legacy">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" placeholder="Password" formControlName="Password" [(ngModel)]="reg_users.Password" id="password">
+          <div *ngIf="registerForm.get('Password').invalid && 
+            (registerForm.get('Password').dirty || registerForm.get('Password').touched)" class="alert alert-danger">
+            <div *ngIf="registerForm.get('Password').errors.required">*Password is required</div>
+            <div *ngIf="registerForm.get('Password').errors.minlength">*Password must be atleast 5 characters long.</div>
+            <div *ngIf="registerForm.get('Password').errors.maxlength">*Password must be maximum of 11 characters long.</div>
+            <div *ngIf="registerForm.get('Password').errors.pattern">*Password must only contain letters, digits and special 
+              characters like @!*&^%#$./,.</div>
+          </div>
+        </mat-form-field>
+        <button mat-button color="primary" [disabled]="registerForm.invalid">Register</button>
+        <p>Already a user? Go to Login!</p>
+  </div>  
+</form>
+</div>
+
+
