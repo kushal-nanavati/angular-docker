@@ -1,3 +1,23 @@
 table{
     width:100%;
+    margin-top:3%;
 }
+mat-toolbar{
+    justify-content: center;
+}
+.filler{
+    flex:0.5 0.5 40%;
+}
+.gap{
+    margin-right: 10px;
+}
+.user{
+    font-size: 0.8em;
+}
+.logout{
+    margin-left:3%;
+}
+
+
+  
+  

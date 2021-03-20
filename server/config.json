@@ -2,7 +2,7 @@
     "dbConfig":{
         "user":"sa",
         "password":"Passwd@12",
-        "server":"KUSHAL",
+        "server":"KUSHAL\\SQLEXPRESS",
         "database":"happy",
         "port":1433
     },

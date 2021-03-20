@@ -3,7 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 const headers = new HttpHeaders({
   'Content-Type': 'application/json',
-  'Access-Control-Allow-Origin':"*"
+  'Access-Control-Allow-Origin': '*'
+  // 'Authorization': `Bearer ${localStorage.getItem("encryptedToken")}`
 });
 
 const options = {
@@ -19,5 +20,12 @@ export class LoginService {
 
   checkExistingUsers(users){
     return this.http.post(this.url, users, options);
+  }
+  loggedIn(){
+    if(localStorage.getItem("encryptedToken")){
+      return true;
+    }else{
+      return false;
+    }
   }
 }

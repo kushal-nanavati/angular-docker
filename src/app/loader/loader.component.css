@@ -1,0 +1,7 @@
+.loader-class{
+    position: fixed;
+    z-index: 100000;
+    top:45%;
+    left:50%;
+    pointer-events: none;
+}

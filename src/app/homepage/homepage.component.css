@@ -1,0 +1,57 @@
+.header{
+    display:flex;
+    flex-direction: row;
+}
+.toolbar{
+    float:left;
+    background-color: black;
+    padding-left:10%;  
+    height:90px; 
+}
+.plug{
+    color:white;
+}
+.navbar{
+    padding:5% 0% 3.5% 40%;
+}
+
+.navbar a{
+    margin:0 5%;
+    text-decoration: none;
+}
+.navbar a:hover{
+    color:orange;
+}
+.header .toolbar .navbar .warn-button{
+    width:110px;
+    height:33px;
+    justify-content: center;
+    font-weight: bold;
+}
+.container{
+    padding-top:5%;
+}
+#ornament,#retina,#cool{
+    position: relative;
+    width:1170px;
+    height:473.15px;
+}
+.carousel-caption h2{
+    position: absolute;
+    transform: translate(2%,-350%);
+    bottom: initial;
+}
+.carousel-caption #hurry-up{
+    position: absolute;
+    transform: translate(30%,-300%);
+    bottom:initial;
+}
+.carousel-indicators{
+    transform: translateY(-25%);
+}
+.plug-image{
+    width:60px;
+    height:35px;
+    padding-left:1%;
+    padding-right: 1%;
+}

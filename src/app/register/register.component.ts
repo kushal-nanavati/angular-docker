@@ -3,6 +3,7 @@ import {RegisteredUsers} from '../../assets/models/registered_users';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RegisterService } from './register.service';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -54,7 +55,7 @@ export class RegisterComponent implements OnInit {
       ]
     )
   });
-  constructor(private registerService:RegisterService, private router:Router) { }
+  constructor(private registerService:RegisterService, private router:Router, private toastr:ToastrService) { }
 
   ngOnInit() {
   }
@@ -66,7 +67,7 @@ export class RegisterComponent implements OnInit {
       // console.log(res);
       localStorage.setItem("token",res["token"]);
       this.isError=false;
-      this.text = "*User registered successfully";
+      this.toastr.success("User registered successfully");
       console.log(this.text);
       this.router.navigate(["/login"]);
     },err=>{
@@ -74,7 +75,7 @@ export class RegisterComponent implements OnInit {
       this.errors=err;
       if(this.errors != ""){
         this.isError = true;
-        this.text = "*User already exists";
+        this.toastr.error("User already exists");
         console.log(this.text);
         this.router.navigate(["/register"]);
       }

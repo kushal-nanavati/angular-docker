@@ -1,25 +1,65 @@
+.cards{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.card-1{
+    width:15%;
+    background-color: #3366ff;
+    color:white;
+}
+.card-2{
+    width:30%;
+    margin:0;
+    height:500px;
+    border-radius: 0.1%;
+}
+.log{
+    font-family: Roboto, Arial, sans-serif;
+    letter-spacing: 0;
+    font-size:200%;
+    margin-top:20%;
+    line-height: 1.4;
+}
+.stuffs{
+    font-family: Roboto, Arial, sans-serif;
+    letter-spacing: 0;
+    margin-top:20%;
+    line-height: 1.4;
+    font-weight:lighter;
+    font-size:120%;
+}
+.login{
+    padding-top:2%;
+}
+.alert{
+    max-height: 0px ;
+    margin-top: 0px !important;
+}
 .toolbar
 {
     justify-content: center;   
 }
 .container
 {
-    padding:5% 28%;
-    box-shadow: 5px 5px 5px 5px;
+    padding:4% 16%;
     width:100%;
 }
 .form-content
 {
     text-align: center;
-    padding: 2% 2%;
+    padding: 1% 1%;
 }
 mat-form-field
 {
     width:100%;
 }
-button
+.sign-in button
 {
     width:100%;
+    top:-1%;
+}
+.sign-in p{
 }
 .not-found
 {
@@ -32,4 +72,11 @@ button
     color:green;
     text-align: center;
     font-size: 1.2em;
+}
+.login-logo{
+    transform: translate(0%);   
+    width:10%;
+    height:14%;
+    padding-top:2%;
+    
 }
